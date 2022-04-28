@@ -1,0 +1,187 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://World8.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldComplete.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DirtAutoTile.tres" type="TileSet" id=4]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Border.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Trap.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PauseScreen.tscn" type="PackedScene" id=8]
+[ext_resource path="res://FPSScreen.tscn" type="PackedScene" id=9]
+[ext_resource path="res://StatScreen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://slc_anim.tscn" type="PackedScene" id=11]
+
+[node name="Welt 8" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 224 )
+
+[node name="WorldComplete" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1440, 352 )
+next_world = "res://World9.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( 131071, 0, 5, 65541, 0, 196613, 65552, 0, 196613, 196607, 0, 65541, 131090, 0, 196613, 262143, 0, 65541, 196611, 0, 196613, 196614, 0, 196613, 196618, 0, 196613, 196623, 0, 196613, 327679, 0, 65542, 262144, 0, 7, 262153, 0, 196613, 327680, 0, 65542, 327681, 0, 196609, 327682, 0, 196609, 327683, 0, 196609, 327684, 0, 196609, 327685, 0, 196610, 327694, 0, 196613, 393236, 0, 196613, 393238, 0, 196613, 458765, 0, 196613, 524299, 0, 196613, 524307, 0, 196613 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Coins" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Coin" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 342, 290 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 226, 174 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 1245, 480 )
+
+[node name="Border" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Border" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1536, 672 )
+
+[node name="Border2" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1600, 672 )
+
+[node name="Border3" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1664, 672 )
+
+[node name="Border4" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1472, 672 )
+
+[node name="Border5" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1408, 672 )
+
+[node name="Border6" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1344, 672 )
+
+[node name="Border7" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1280, 672 )
+
+[node name="Border8" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1216, 672 )
+
+[node name="Border9" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1152, 672 )
+
+[node name="Border10" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1088, 672 )
+
+[node name="Border11" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1024, 672 )
+
+[node name="Border12" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 960, 672 )
+
+[node name="Border13" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 896, 672 )
+
+[node name="Border14" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 832, 672 )
+
+[node name="Border15" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 768, 672 )
+
+[node name="Border16" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 704, 672 )
+
+[node name="Border17" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 640, 672 )
+
+[node name="Border18" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 576, 672 )
+
+[node name="Border19" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 512, 672 )
+
+[node name="Border20" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 448, 672 )
+
+[node name="Border21" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 384, 672 )
+
+[node name="Border22" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 320, 672 )
+
+[node name="Border23" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 256, 672 )
+
+[node name="Border24" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 192, 672 )
+
+[node name="Border25" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 128, 672 )
+
+[node name="Border26" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 64, 672 )
+
+[node name="Border27" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 0, 672 )
+
+[node name="Trap" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Trap" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 288, 160 )
+
+[node name="Trap2" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 480, 224 )
+
+[node name="Trap3" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 800, 224 )
+
+[node name="Trap9" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 864, 224 )
+
+[node name="Trap4" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 800, 480 )
+
+[node name="Trap5" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 1120, 96 )
+
+[node name="Trap6" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 1312, 160 )
+rotation = 3.14159
+
+[node name="Trap7" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 1376, 160 )
+rotation = 3.14159
+
+[node name="Trap8" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 1440, 160 )
+rotation = 3.14159
+
+[node name="Trap10" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 192, 288 )
+rotation = -1.5708
+
+[node name="Trap11" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 235, 288 )
+rotation = 1.5708
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 9 )]
+
+[node name="CanvasLayer3" parent="." instance=ExtResource( 10 )]
+
+[node name="CanvasLayer4" parent="." instance=ExtResource( 11 )]
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="coin_collected" from="Coins/Coin" to="WorldComplete" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin" to="." method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin2" to="." method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin3" to="." method="_on_Coin_coin_collected"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

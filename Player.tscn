@@ -1,0 +1,101 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/Dead0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/Dead1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/Dead2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Player/Dead3.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Sky.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Dead",
+"speed": 48.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.0
+height = 28.0
+
+[node name="Player" type="KinematicBody2D"]
+z_index = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+light_mask = 0
+frames = SubResource( 1 )
+animation = "Dead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 640, 640 )
+
+[node name="Sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 15 )
+centered = false
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 30, 2 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 0.59
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

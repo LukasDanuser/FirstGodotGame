@@ -1,0 +1,46 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/Collectables/goldCoin1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Collectables/goldCoin2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Collectables/goldCoin3.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Collectables/goldCoin4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Collectables/goldCoin5.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Collectables/goldCoin6.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Collectables/goldCoin7.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Collectables/goldCoin8.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Collectables/goldCoin9.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="lc_used" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+margin_right = 640.0
+margin_bottom = 320.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+margin_left = 320.0
+margin_top = 160.0
+margin_right = 320.0
+margin_bottom = 160.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MarginContainer/CenterContainer/VBoxContainer"]
+modulate = Color( 0.203922, 0.92549, 0.0745098, 1 )
+position = Vector2( 0, -64 )
+frames = SubResource( 1 )
+frame = 5
+playing = true

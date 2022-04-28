@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Gamepad.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Buttons/Zurück.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Buttons/Zurück1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Sky.png" type="Texture" id=4]
+
+[node name="Gamepad" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 197.0
+margin_top = 25.0
+margin_right = 443.0
+margin_bottom = 294.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 246.0
+margin_bottom = 218.0
+text = "R2 / LS-Rechts: nach rechts gehen
+L2 / LS-Links: nach links gehen
+A / L1 / R1: springen
+B: Schiessen
+Select: Welt zurücksetzen
+RS-Oben: Kamera nach oben
+RS-Unten: Kamera nach unten
+RS-Links: Kamera nach links
+RS-Rechts: Kamera nach rechts
+Y: Gedrückt halten, damit sich 
+die Kamera nach loslassen 
+der Steuerungstasten wieder zentriert.
+X: Kamera zentrieren"
+
+[node name="BackButton" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+margin_left = 63.0
+margin_top = 222.0
+margin_right = 182.0
+margin_bottom = 269.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 2 )
+texture_focused = ExtResource( 3 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 640 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 4 )
+centered = false
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

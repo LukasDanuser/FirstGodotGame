@@ -1,0 +1,159 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Mitwirkende.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Buttons/Entwickelt-von-Lukas.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Buttons/OpenPixelProject.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Buttons/OpenPixelProject1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Idle0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Buttons/bevouliincom.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Buttons/bevouliincom1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/spike A.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/AI/1.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Buttons/LetargicDev.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Buttons/LetargicDev1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/portalRings2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Buttons/ScagHound.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Buttons/ScagHound1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/items/Fireball1.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Buttons/morgan3d.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Buttons/morgan3d (1).png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Collectables/goldCoin5.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Buttons/Zurück2.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Buttons/Zurück3.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Sky.png" type="Texture" id=21]
+
+[node name="Mitwirkende" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 222.0
+margin_top = 42.0
+margin_right = 418.0
+margin_bottom = 317.0
+
+[node name="Label" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+margin_right = 196.0
+margin_bottom = 33.0
+texture = ExtResource( 2 )
+
+[node name="OPP" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+margin_top = 37.0
+margin_right = 196.0
+margin_bottom = 74.0
+texture_normal = ExtResource( 3 )
+texture_focused = ExtResource( 4 )
+
+[node name="OPP" type="Sprite" parent="CenterContainer/VBoxContainer/OPP"]
+position = Vector2( -9, 17 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="bevouliincom" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+margin_top = 78.0
+margin_right = 196.0
+margin_bottom = 112.0
+texture_normal = ExtResource( 6 )
+texture_focused = ExtResource( 7 )
+
+[node name="Bevouliin" type="Sprite" parent="CenterContainer/VBoxContainer/bevouliincom"]
+position = Vector2( -53, 17 )
+scale = Vector2( 0.118519, 0.124031 )
+texture = ExtResource( 8 )
+
+[node name="Bevouliin2" type="Sprite" parent="CenterContainer/VBoxContainer/bevouliincom"]
+position = Vector2( -14, 16 )
+scale = Vector2( 0.0567376, 0.0578662 )
+texture = ExtResource( 9 )
+
+[node name="LetargicDev" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+margin_top = 116.0
+margin_right = 196.0
+margin_bottom = 153.0
+texture_normal = ExtResource( 10 )
+texture_focused = ExtResource( 11 )
+
+[node name="portalRings2" type="Sprite" parent="CenterContainer/VBoxContainer/LetargicDev"]
+position = Vector2( -13, 18 )
+texture = ExtResource( 12 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="ScagHound" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+margin_top = 157.0
+margin_right = 196.0
+margin_bottom = 195.0
+texture_normal = ExtResource( 13 )
+texture_focused = ExtResource( 14 )
+
+[node name="Fireball1" type="Sprite" parent="CenterContainer/VBoxContainer/ScagHound"]
+position = Vector2( -14, 20 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+
+[node name="morgan3d" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+margin_top = 199.0
+margin_right = 196.0
+margin_bottom = 237.0
+texture_normal = ExtResource( 16 )
+texture_focused = ExtResource( 17 )
+
+[node name="goldCoin5" type="Sprite" parent="CenterContainer/VBoxContainer/morgan3d"]
+position = Vector2( -11, 17 )
+texture = ExtResource( 18 )
+
+[node name="BackButton" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+margin_top = 241.0
+margin_right = 196.0
+margin_bottom = 275.0
+texture_normal = ExtResource( 19 )
+texture_focused = ExtResource( 20 )
+
+[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/BackButton"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = -25.0
+margin_top = 34.0
+margin_right = 348.0
+margin_bottom = 48.0
+text = "* Teilweise bearbeitet."
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 640, 640 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 21 )
+centered = false
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Node"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 218.0
+margin_top = 120.0
+margin_right = 229.0
+margin_bottom = 134.0
+text = "*"
+
+[node name="Label2" type="Label" parent="Node"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 218.0
+margin_top = 247.0
+margin_right = 229.0
+margin_bottom = 261.0
+text = "*"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/OPP" to="." method="_on_OPP_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/bevouliincom" to="." method="_on_Stacheln_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/LetargicDev" to="." method="_on_Portal_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ScagHound" to="." method="_on_Fireball_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/morgan3d" to="." method="_on_morgan3d_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

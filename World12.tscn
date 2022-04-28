@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://World12.gd" type="Script" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldComplete.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DirtAutoTile.tres" type="TileSet" id=4]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Border.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Trap.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://PauseScreen.tscn" type="PackedScene" id=9]
+[ext_resource path="res://FPSScreen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://StatScreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://slc_anim.tscn" type="PackedScene" id=12]
+
+[node name="Welt 12" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 289 )
+
+[node name="WorldComplete" parent="." instance=ExtResource( 3 )]
+position = Vector2( -224, 544 )
+next_world = "res://Boss Welt.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+format = 1
+tile_data = PoolIntArray( 131071, 0, 5, 196607, 0, 65541, 262143, 0, 65541, 196611, 0, 196608, 196612, 0, 196609, 196613, 0, 196610, 327679, 0, 65541, 393215, 0, 65542, 327680, 0, 196609, 327681, 0, 196610, 327687, 0, 196608, 327688, 0, 196610, 458762, 0, 196608, 458763, 0, 196610, 655356, 0, 196608, 655357, 0, 196610, 589837, 0, 196608, 589838, 0, 196610, 720894, 0, 196613, 655364, 0, 196608, 655365, 0, 196609, 655366, 0, 196609, 655367, 0, 196609, 655368, 0, 196609, 655369, 0, 196609, 655370, 0, 196610, 786432, 0, 196608, 786433, 0, 196609, 786434, 0, 196610, 786444, 0, 196608, 786445, 0, 196610, 786447, 0, 196613 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Coins" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Coin" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 448, 193 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 661, 434 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 468, 305 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( 416, 627 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 5 )]
+position = Vector2( -97, 611 )
+
+[node name="Border" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Border" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1056, 864 )
+
+[node name="Border2" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1120, 864 )
+
+[node name="Border3" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1184, 864 )
+
+[node name="Border4" parent="Border" instance=ExtResource( 6 )]
+position = Vector2( 1248, 864 )
+
+[node name="Trap" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Trap" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 160, 288 )
+
+[node name="Trap2" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 288, 160 )
+
+[node name="Trap3" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 416, 288 )
+
+[node name="Trap5" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 608, 416 )
+
+[node name="Trap6" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 704, 256 )
+rotation = 4.01426
+
+[node name="Trap8" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 896, 384 )
+rotation = 4.01426
+
+[node name="Trap7" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 800, 544 )
+
+[node name="Trap9" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 928, 800 )
+
+[node name="Trap10" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 736, 736 )
+
+[node name="Trap11" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 608, 544 )
+rotation = 3.14159
+
+[node name="Trap12" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 480, 608 )
+
+[node name="Trap13" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 352, 608 )
+
+[node name="Trap14" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 224, 736 )
+
+[node name="Trap17" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 160, 544 )
+rotation = 3.14159
+
+[node name="Trap15" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 96, 736 )
+
+[node name="Trap16" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( -32, 736 )
+
+[node name="Trap4" parent="Trap" instance=ExtResource( 7 )]
+position = Vector2( 512, 128 )
+rotation = 4.01426
+
+[node name="Enemy" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Enemy" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 512, 288 )
+
+[node name="Enemy2" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 704, 416 )
+
+[node name="Enemy3" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 896, 544 )
+
+[node name="Enemy4" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 832, 736 )
+
+[node name="Enemy5" parent="Enemy" instance=ExtResource( 8 )]
+position = Vector2( 671.969, 608 )
+speed = 38
+hp = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource( 9 )]
+visible = false
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 10 )]
+
+[node name="CanvasLayer3" parent="." instance=ExtResource( 11 )]
+
+[node name="CanvasLayer4" parent="." instance=ExtResource( 12 )]
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="coin_collected" from="Coins/Coin" to="WorldComplete" method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin" to="." method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin2" to="." method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin3" to="." method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin4" to="." method="_on_Coin_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin5" to="." method="_on_Coin_coin_collected"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
